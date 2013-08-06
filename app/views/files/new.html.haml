@@ -1,0 +1,7 @@
+-if @content.class == Array
+  %ul
+    -@content.each do |file|
+      %li
+        =link_to file, files_new_path(:file => "#{params[:file]}/#{file}")
+-else
+  = simple_format @content
