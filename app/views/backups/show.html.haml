@@ -1,0 +1,14 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @backup.name
+%p
+  %b Description:
+  = @backup.description
+
+= link_to 'GOTO Backup', files_index_path(name: @backup.name)
+%hr
+= link_to 'Edit', edit_backup_path(@backup)
+\|
+= link_to 'Back', backups_path

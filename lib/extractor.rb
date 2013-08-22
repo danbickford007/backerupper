@@ -3,10 +3,10 @@ module Extractor
   require 'rubygems/package'
   require 'zlib'
 
-  def open_tar
+  def open_tar(name)
     @files = []
     FakeFS do 
-      tar_extract = Gem::Package::TarReader.new(Zlib::GzipReader.open('myTarGz.tar.gz'))
+      tar_extract = Gem::Package::TarReader.new(Zlib::GzipReader.open("lib/uploads/#{name}"))
       tar_extract.rewind
       tar_extract.each do |entry|
         puts @files << entry.full_name

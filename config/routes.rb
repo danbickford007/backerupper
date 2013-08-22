@@ -1,8 +1,13 @@
 Backerupper::Application.routes.draw do
+  resources :backups
+
+  devise_for :users
+  post "files/upload"
+  get "files/download"
   get "files/index"
   get "files/new"
   resources :users
-  root :to => "users#index"
+  root :to => "backups#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

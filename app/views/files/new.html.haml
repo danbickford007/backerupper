@@ -4,4 +4,6 @@
       %li
         =link_to file, files_new_path(:file => "#{params[:file]}/#{file}")
 -else
+  =link_to 'Download File', files_download_path(:file => params[:file])
+  %hr
   = simple_format @content
